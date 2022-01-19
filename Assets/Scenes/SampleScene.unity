@@ -1330,6 +1330,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2721967036243640142, guid: 2210103f5d30992469d8f279f312be40, type: 3}
+      propertyPath: retractionSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721967037091448627, guid: 2210103f5d30992469d8f279f312be40, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3324768961243218475, guid: 2210103f5d30992469d8f279f312be40, type: 3}
       propertyPath: m_RootOrder
       value: 14
