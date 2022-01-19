@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text shotsLeft;
     public TMP_Text gameOver;
 
+    private bool isGamePlaying = false;
+    private int currentLevel = 0;
+
+    private bool japaneseText = false;
+
+    private string[] levels = new string[] { "Level1", "Level2", "Level3", "Level4" };
 
     private void Awake()
     {
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            QuitGame();
         }
     }
 
@@ -73,8 +79,38 @@ public class GameManager : MonoBehaviour
         gameOver.enabled = true;
     }
 
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(levels[currentLevel]);
+    }
+
     public void NextLevel()
     {
+        currentLevel++;
 
+        if(currentLevel > levels.Length - 1)
+        {
+            currentLevel = 0;
+            LoadLevel();
+        }
+        else
+        {
+            LoadLevel();
+        }
+    }
+
+    public void StartGame()
+    {
+        isGamePlaying = true;
+    }
+
+    public void ShowJapaneseText(bool isJapaneseText)
+    {
+        japaneseText = isJapaneseText;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

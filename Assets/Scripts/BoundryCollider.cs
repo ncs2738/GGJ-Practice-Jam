@@ -17,20 +17,22 @@ public class BoundryCollider : MonoBehaviour
     {
         if (!doesEnemyPatrol)
         {
-            if(enemy.IgnoresPlatforms())
+            //if(enemy.IgnoresPlatforms())
             {
                 if (other.gameObject.GetComponent<Boundry>() || other.gameObject.GetComponent<Enemy>())
                 {
                     enemy.FlipDirection();
                 }
             }
+            /*
             else
             {
-                if (other.gameObject.GetComponent<Boundry>() || other.gameObject.GetComponent<Platform>() || other.gameObject.GetComponent<Enemy>())
+                if (other.gameObject.GetComponent<Boundry>() || other.gameObject.GetComponent<Enemy>())
                 {
                     enemy.FlipDirection();
                 }
             }
+            */
         }
         else
         {
